@@ -29,8 +29,4 @@ fun main() {
         grade++
     }
 
-
-
-
-
 }
