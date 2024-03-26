@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.AboutActivity
+import com.ImageActivity
 import com.alex.mystic.ui.theme.MysticTheme
 
 class MainActivity : ComponentActivity() {
@@ -51,6 +53,8 @@ fun Greeting() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
 
+
+
     ) {
 
         Row(
@@ -59,7 +63,6 @@ fun Greeting() {
                 .background(Color.Cyan)
                 .fillMaxWidth()
                 .height(25.dp)
-
 
 
         ) {
@@ -82,18 +85,52 @@ fun Greeting() {
         Spacer(modifier = Modifier.height(50.dp))
 
         Text(text = "My first android project", color = Color.Blue, fontSize = 20.sp)
-        Text(text = "Happy coding", fontFamily = FontFamily.Serif, modifier = Modifier.background
-            (Color.Red) )
+        Text(
+            text = "Happy coding", fontFamily = FontFamily.Serif, modifier = Modifier.background
+                (Color.Red)
+        )
 
         val about = LocalContext.current
         Button(onClick = {
 
             about.startActivity(Intent(about, AboutActivity::class.java))
 
+
         }) {
             Text(text = "About")
+        }
+        val img = LocalContext.current
+        Button(onClick = {
+
+            img.startActivity(Intent(img, ImageActivity::class.java))
+
+        }){
+            Text(text = "img")
+
 
         }
+
+        val inp = LocalContext.current
+        Text(text = "Click me",
+            modifier = Modifier
+                .clickable {
+                    inp.startActivity(Intent(inp,InputActivity::class.java))
+                }
+
+        )
+
+        val scr = LocalContext.current
+        Button(onClick = {
+
+            scr.startActivity(Intent(scr, ScrollActivity::class.java))
+
+        }){
+            Text(text = "Scroll")
+
+
+        }
+        
+    }
+        
     }
 
-}

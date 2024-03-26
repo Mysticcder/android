@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -24,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alex.mystic.MainActivity
@@ -72,11 +74,20 @@ fun About() {
       }
 
 
-      val laps = AnnotatedString("Click Here")
+      val laps = AnnotatedString("Click Here", spanStyle = SpanStyle(Color.Yellow))
       val lots = LocalContext.current
       ClickableText(text = laps, onClick = {
           lots.startActivity(Intent(lots, MainActivity::class.java))
       })
+
+      val khi = LocalContext.current
+      Text(text = "Click me",
+          modifier = Modifier
+              .clickable {
+                  khi.startActivity(Intent(khi,MainActivity::class.java))
+              }
+
+      )
       }
 
   }
