@@ -15,10 +15,12 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,13 +42,13 @@ class InputActivity : ComponentActivity() {
         }
     }
 }
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
 @Composable
 fun Input() {
 Column(
     modifier = Modifier
-        .background(Color.Yellow)
+        .background(Color.Blue)
         .fillMaxSize()
         .padding(10.dp),
 
@@ -67,7 +69,7 @@ Column(
     TextField(value = name,
         onValueChange = { name = it},
         label = {Text(text = "Enter name")},
-        textStyle = androidx.compose.ui.text.TextStyle(Color.White),
+        textStyle = androidx.compose.ui.text.TextStyle(Color.Black),
         leadingIcon = { androidx.compose.material3.Icon(imageVector = androidx.compose.material.icons.Icons.Default.Person , contentDescription = "")}
 
     )
@@ -97,15 +99,15 @@ Column(
         leadingIcon = { androidx.compose.material3.Icon(imageVector = androidx.compose.material.icons.Icons.Default.Phone ,
             contentDescription = "")},
         textStyle = androidx.compose.ui.text.TextStyle(Color.White),
-//        colors = TextFieldDefaults.outlinedTextFieldColors(
+        colors = TextFieldDefaults.outlinedTextFieldColors(
+            focusedBorderColor = androidx.compose.ui.graphics.Color.Blue,
 //            focusedBorderColor = androidx.compose.ui.graphics.Color.Blue,
-//            focusedBorderColor = androidx.compose.ui.graphics.Color.Blue,
-//            unfocusedBorderColor = androidx.compose.ui.graphics.Color.Red,
+            unfocusedBorderColor = androidx.compose.ui.graphics.Color.Red,
 //            unfocusedBorderColor = androidx.compose.ui.graphics.Color.Red,
 //            CursorColor = androidx.compose.ui.graphics.Color.White,
 //            unfocusedLeadingColor = androidx.compose.ui.graphics.Color.Red,
 //            FocusedLeadingColor = androidx.compose.ui.graphics.Color.Green
-//        )
+        )
     )
     }
     }

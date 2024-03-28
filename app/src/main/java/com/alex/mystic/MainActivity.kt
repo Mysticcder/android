@@ -129,7 +129,29 @@ fun Greeting() {
 
 
         }
-        
+
+
+        val cards = LocalContext.current
+        Button(onClick = {
+
+            cards.startActivity(Intent(cards, CardActivity::class.java))
+
+        }){
+            Text(text = "Card")
+
+
+        }
+
+        val ass = LocalContext.current
+        Button(onClick = {
+
+            ass.startActivity(Intent(ass, AssignActivity2::class.java))
+
+        }){
+            Text(text = "ass")
+
+
+        }
     }
         
     }

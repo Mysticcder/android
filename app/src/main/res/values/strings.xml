@@ -4,4 +4,7 @@
     <string name="title_activity_image">ImageActivity</string>
     <string name="title_activity_input">InputActivity</string>
     <string name="title_activity_scroll">ScrollActivity</string>
+    <string name="title_activity_card">CardActivity</string>
+    <string name="title_activity_grid">GridActivity</string>
+    <string name="title_activity_assign2">AssignActivity2</string>
 </resources>

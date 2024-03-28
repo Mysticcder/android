@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Mystic"
         tools:targetApi="31">
         <activity
+            android:name=".AssignActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_assign2"
+            android:theme="@style/Theme.Mystic" />
+        <activity
+            android:name=".GridActivity"
+            android:exported="false"
+            android:label="@string/title_activity_grid"
+            android:theme="@style/Theme.Mystic" />
+        <activity
+            android:name=".CardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_card"
+            android:theme="@style/Theme.Mystic" />
+        <activity
             android:name=".ScrollActivity"
             android:exported="false"
             android:label="@string/title_activity_scroll"
