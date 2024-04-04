@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 rootProject.name = "mystic"
 include(":app")
 include(":app")
+include(":app")
+ 

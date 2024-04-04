@@ -4,4 +4,6 @@
     <style name="Theme.Mystic" parent="android:Theme.Material.Light.NoActionBar" />
 
     <style name="Theme.Alex" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Assign2" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

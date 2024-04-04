@@ -17,10 +17,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -29,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alex.mystic.ui.theme.MysticTheme
@@ -101,7 +106,7 @@ fun Assign() {
                     Row(
                         modifier = Modifier
                             .padding(10.dp)
-                            .background(Color.White)
+                            .background(Color.Blue)
                             .padding(10.dp)
                             .shadow(elevation = 10.dp)
 
@@ -149,7 +154,7 @@ fun Assign() {
                         Image(imageVector = Icons.Default.Home,
                             contentDescription ="",
                         )
-                        Text(text = "Hotels")
+                        Text(text = "Taxi")
 
                     }
 
@@ -164,7 +169,7 @@ fun Assign() {
                         Image(imageVector = Icons.Default.Home,
                             contentDescription ="",
                         )
-                        Text(text = "Holiday")
+                        Text(text = "Ticket")
 
                     }
 
@@ -188,7 +193,7 @@ fun Assign() {
                         Image(imageVector = Icons.Default.Home,
                             contentDescription ="",
                         )
-                        Text(text = "Hotels")
+                        Text(text = "Airplane")
 
                     }
 
@@ -203,7 +208,7 @@ fun Assign() {
                         Image(imageVector = Icons.Default.Home,
                             contentDescription ="",
                         )
-                        Text(text = "Holiday")
+                        Text(text = "Harbour")
 
                     }
 
@@ -212,21 +217,70 @@ fun Assign() {
                 Row (
                 ){
 
-                    Text(text = "Popular")
+                    Text(text = "Popular in town")
 
-                    Spacer(modifier = Modifier.width(60.dp))
+                    Spacer(modifier = Modifier.width(80.dp))
 
                     Text(text = "View All")
+
+                }
+
+                Spacer(modifier = Modifier.height(50.dp))
+
+                Column(
+                    modifier = Modifier
+                        .padding(10.dp)
+                )
+
+                {
+                    Row {
+                        Card(
+                            elevation = CardDefaults.cardElevation(25.dp)
+
+                        ) {
+                            Image(painter = painterResource(id = R.drawable.img_1), contentDescription = "")
+                        }
+
+                        Card {
+                            Image(painter = painterResource(id = R.drawable.img_1), contentDescription = "")
+                        }
+                    }
+
+                    Row {
+                        Card {
+                            Image(painter = painterResource(id =R.drawable.img_1), contentDescription = "")
+                        }
+
+                        Card (
+                            modifier = Modifier
+                                .padding(15.dp),
+
+//                            Spacer(modifier = Modifier.width(35.dp))
+                        ){
+                            Image(painter = painterResource(id =R.drawable.img_1), contentDescription = "")
+                        }
+                    }
+
+
+
+
+                    }
+
+
+
 
                 }
 
 
 
             }
+
+          }
+
         }
-    }
 
 
-}
+
+
 
 

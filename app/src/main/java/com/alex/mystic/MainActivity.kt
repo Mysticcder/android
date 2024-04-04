@@ -152,6 +152,21 @@ fun Greeting() {
 
 
         }
+        val imgn = LocalContext.current
+        Button(onClick = {
+
+            imgn.startActivity(Intent(imgn, ImagePIckerActivity::class.java))
+
+        }){
+            Text(text = "imgn")}
+
+        val web = LocalContext.current
+        Button(onClick = {
+
+            web.startActivity(Intent(web, WebActivity::class.java))
+
+        }){
+            Text(text = "web")}
     }
         
     }
